@@ -6,12 +6,12 @@ It's assumed that you'd use this script to produce a RouterOS-compatible Firehol
 and then host this from a webserver somewhere.
 
 ### Run the Script to generate firehole.rsc
-```bash
+```text
 $ python3 firehol-to-routeros.py
 ```
 
 Optionally, define your own output file or source URL; see the help output for info:
-```bash
+```text
 $ python3 firehol-to-routeros.py -h
 usage: firehol-to-routeros.py [-h] [-u SOURCE_URL] [-o DEST_FILE]
 
