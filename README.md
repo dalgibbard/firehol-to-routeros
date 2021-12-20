@@ -31,24 +31,24 @@ Then setup RouterOS as follows:
 ```text
 # Create A Downloader Script
 /system/script/add name="downloadfirehol" \
-    dont-require-permissions=yes
-    source=/tool fetch url="https://my-hosted-script-domain.com/firehol.rsc" \
+    dont-require-permissions=yes \
+    source={/tool fetch url="https://my-hosted-script-domain.com/firehol.rsc" \
     mode=https \
     output=file \
-    dst-path=firehol.rsc;
+    dst-path=firehol.rsc;}
 
 # Create an Updater Script
 /system/script/add name="replacefirehol" \
     policy=read,write \
     dont-require-permissions=no \
-    source=/file
+    source={/file
        :global firehol [/file get firehol.rsc contents];
        :if (firehol != "") do={/ip firewall address-list remove [find where comment="firehol"]
-       /import file-name=firehol.rsc;}
+       /import file-name=firehol.rsc;}}
 
 # Setup a Downloader Schedule
 /system/scheduler/add start-time=06:00:00 interval=6h name=downloadfirehol on-event=downloadfirehol
 
 # Setup an Updater Schedule
-/system/scheduler/add start-time=06:05:00 interval=6h name=replacefirehol on-event=downloadfirehol
+/system/scheduler/add start-time=06:05:00 interval=6h name=replacefirehol on-event=replacefirehol
 ```
