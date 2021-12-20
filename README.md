@@ -26,7 +26,7 @@ optional arguments:
 * Copy the created ```firehol.rsc``` file to a webserver etc.
 
 ## Setup RouterOS
-Then setup RouterOS as follows:
+Then setup RouterOS as follows (be sure to change naming if you're using this for something other than Firehol :) ):
 
 ```text
 # Create A Downloader Script
