@@ -1,6 +1,8 @@
 # firehol-to-routeros
 Small python script to produce RouterOS compatible blocklists from FireHOL Level1
 
+Also configurable enough to take any URL containing a list of CIDRs and make a custom RouterOS compatible Address-List
+
 ## Setup
 It's assumed that you'd use this script to produce a RouterOS-compatible Firehol blocklist,
 and then host this from a webserver somewhere.
