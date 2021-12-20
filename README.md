@@ -7,7 +7,20 @@ and then host this from a webserver somewhere.
 
 ### Run the Script to generate firehole.rsc
 ```bash
-python3 firehol-to-routeros.py
+$ python3 firehol-to-routeros.py
+```
+
+Optionally, define your own output file or source URL; see the help output for info:
+```bash
+$ python3 firehol-to-routeros.py -h
+usage: firehol-to-routeros.py [-h] [-u SOURCE_URL] [-o DEST_FILE]
+
+Small python script to produce RouterOS compatible blocklists from FireHOL Level1
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -u SOURCE_URL  Source URL for Firehol List (just a list of IP CIDRs)
+  -o DEST_FILE   Output file to create
 ```
 
 * Copy the created ```firehol.rsc``` file to a webserver etc.
